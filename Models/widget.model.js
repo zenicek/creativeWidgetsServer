@@ -4,7 +4,7 @@ const ElementSchema = new Schema({
   elementType: String,
   elementIndex: Number,
   elementLetter: String,
-  initialValue: Number,
+  value: Number,
   min: Number,
   max: Number,
   list: [Schema.Types.Mixed],
