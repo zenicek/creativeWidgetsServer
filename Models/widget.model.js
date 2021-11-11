@@ -7,7 +7,7 @@ const ElementSchema = new Schema({
   value: Number,
   min: Number,
   max: Number,
-  list: [Schema.Types.Mixed],
+  list: [{ optionName: Schema.Types.Mixed, onValue: Number, offValue: Number }],
 });
 
 const WidgetSchema = new Schema({
