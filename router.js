@@ -12,6 +12,8 @@ router.post('/widget', ApiClient.createWidget);
 //gets the widget information about a specific widget (when user clicks on the list)
 router.get('/widget/:id', ApiClient.getWidget);
 
+router.post('/widget/:id', ApiClient.updateWidget);
+
 //removes the widget from the db
 router.delete('/widget/:id', ApiClient.removeWidget);
 
