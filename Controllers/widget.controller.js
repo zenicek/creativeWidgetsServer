@@ -3,7 +3,7 @@ const db = require('../Models/index');
 async function getAllWidgets(req, res) {
   try {
     const widgets = await db.Widget.find();
-    //map all the widgets so it only returns id and name as the response
+    res.send(widgets);
     res.status(200);
   } catch (err) {
     console.log(err);
@@ -13,7 +13,7 @@ async function getAllWidgets(req, res) {
 
 async function createWidget(req, res) {
   try {
-    const widget = await db.Widget.create(req.body, { $new: true }); // check the docs to return newly created widget details
+    const widget = await db.Widget.create([{ ...req.body }], { $new: true });
     res.send(widget);
     res.status(201);
   } catch (err) {

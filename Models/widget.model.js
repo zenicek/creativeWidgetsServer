@@ -8,6 +8,7 @@ const ElementSchema = new Schema({
   value: Number,
   min: Number,
   max: Number,
+  step: Number,
   list: [{ optionName: Schema.Types.Mixed, onValue: Number, offValue: Number }],
 });
 
