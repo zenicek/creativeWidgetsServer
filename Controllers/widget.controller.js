@@ -2,7 +2,7 @@ const db = require('../Models/index');
 
 async function getAllWidgets(req, res) {
   try {
-    const widgets = await db.Widget.find();
+    const widgets = await db.Widget.find({}).select('name _id');
     res.send(widgets);
     res.status(200);
   } catch (err) {

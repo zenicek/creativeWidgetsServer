@@ -17,6 +17,8 @@ const WidgetSchema = new Schema({
   formula: String,
   width: Number,
   lastLetter: String,
+  resultDesc: String,
+  resultValueDesc: String,
   elements: [ElementSchema],
 });
 
