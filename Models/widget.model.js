@@ -17,9 +17,9 @@ const WidgetSchema = new Schema({
   formula: String,
   width: Number,
   lastLetter: String,
-  resultDesc: String,
+  resultDescription: String,
   resultValueDesc: String,
-  result: [{ description: String, valueDesc: Number }],
+  result: [{ formula: String, description: String, valueDesc: String }], //this will be used later when added new feature to have more results
   elements: [ElementSchema],
 });
 
