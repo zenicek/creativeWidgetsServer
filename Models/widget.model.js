@@ -19,6 +19,7 @@ const WidgetSchema = new Schema({
   lastLetter: String,
   resultDesc: String,
   resultValueDesc: String,
+  result: [{ description: String, valueDesc: Number }],
   elements: [ElementSchema],
 });
 
