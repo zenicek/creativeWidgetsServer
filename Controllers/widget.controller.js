@@ -13,7 +13,8 @@ async function getAllWidgets(req, res) {
 
 async function createWidget(req, res) {
   try {
-    const widget = await db.Widget.create([{ ...req.body }], { $new: true });
+    const widget = await db.Widget.create([{ ...req.body }], { new: true });
+    console.log(widget);
     res.send(widget);
     res.status(201);
   } catch (err) {

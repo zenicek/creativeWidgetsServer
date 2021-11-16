@@ -11,8 +11,9 @@ const ElementSchema = new Schema({
   step: Number,
   list: [
     {
-      optionName: Schema.Types.Mixed,
-      onValue: Number,
+      id: String,
+      label: Schema.Types.Mixed,
+      value: Number,
       offValue: Number,
       selected: Boolean,
     },
