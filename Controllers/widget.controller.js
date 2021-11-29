@@ -7,15 +7,16 @@ async function getAllWidgets(req, res) {
     res.status(200);
   } catch (err) {
     console.log(err);
-    res.status(500).send('internal server error', err);
+    res.status(500, 'Internal server error');
   }
 }
 
 async function createWidget(req, res) {
   try {
-    const widget = await db.Widget.create([{ ...req.body }], { new: true });
-    console.log(widget);
-    res.send(widget);
+    const widget = new db.Widget({ ...req.body });
+    const result = await widget.save({ new: true });
+    console.log('CREATED DB:', result);
+    res.send(result);
     res.status(201);
   } catch (err) {
     console.log(err);
@@ -31,7 +32,7 @@ async function getWidget(req, res) {
     res.status(200);
   } catch (err) {
     console.log(err);
-    res.status(500).send(err);
+    res.send(500, 'Internal server error');
   }
 }
 
@@ -43,7 +44,7 @@ async function removeWidget(req, res) {
     res.status(204);
   } catch (err) {
     console.log(err);
-    res.status(500).send('internal server error', err);
+    res.send(500, 'Internal server error');
   }
 }
 
@@ -58,7 +59,7 @@ async function updateWidget(req, res) {
     res.status(201);
   } catch (err) {
     console.log(err);
-    res.status(500).send('internal server error', err);
+    res.send(500, 'Internal server error');
   }
 }
 
